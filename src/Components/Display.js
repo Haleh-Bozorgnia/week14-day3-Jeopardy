@@ -2,40 +2,63 @@ import { useState } from "react";
 
 function Display(props) {
   const question = props.question;
-  const [showAnswer, setShowAnswer]= useState(false)
-  const [counter, setCounter]= useState(0)
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [counter, setCounter] = useState(0);
 
-  const answerHandle = ()=>{
-      setShowAnswer(!showAnswer)
-  }
+  const answerHandle = () => {
+    setShowAnswer(!showAnswer);
+  };
   if (question) {
     return (
       <div>
         <div>
-          <h2>SCORE: {counter}</h2>
-          <button onClick={() => setCounter(counter - 100)}>Decrease</button>
-          <button onClick={() => setCounter(counter + 100)}>Increase</button>
-          <button onClick={() => setCounter(0)}>Reset</button>
+          <h2>
+            Score:<span className="counter">{counter}</span>
+          </h2>
+          <button
+            className="btn-counter-dec"
+            onClick={() => setCounter(counter - 100)}
+          >
+            Decrease
+          </button>
+          <button
+            className="btn-counter-inc"
+            onClick={() => setCounter(counter + 100)}
+          >
+            Increase
+          </button>
+          <button className="btn-counter-res" onClick={() => setCounter(0)}>
+            Reset
+          </button>
         </div>
         <div>
-          <h2>QUESTION: {question[0].question}</h2>
-          <h3>CATEGORY: {question[0].category.title}</h3>
-          <h3>POINTS: {question[0].value}</h3>
+          <h2>
+            QUESTION:
+            <span className="question-datais">{question[0].question}</span>
+          </h2>
+          <h3>
+            CATEGORY:{" "}
+            <span className="question-datais">
+              {question[0].category.title}
+            </span>
+          </h3>
+          <h3>
+            POINTS: <span className="question-datais">{question[0].value}</span>
+          </h3>
         </div>
         <div>
           <h3>
             {" "}
-            <button onClick={answerHandle}>
-              {!showAnswer ? "Click to Reveal Question" : "Hide Question"}
+            <button className="btn-showAnswer" onClick={answerHandle}>
+              {!showAnswer ? "Click to Reveal Question" : "Click to Hide"}
             </button>
-            <h3>{showAnswer ? question[0].answer : null}</h3>
           </h3>
+          <h3>{showAnswer ? `Answer is: ` + question[0].answer : null}</h3>
         </div>
       </div>
     );
-  } 
-  else {
-    return <h3>Lets's play</h3>;
+  } else {
+    return <h3>Lets's play!</h3>;
   }
 }
 

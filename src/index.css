@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.btn-counter-dec,.btn-counter-inc, .btn-counter-res, .btn-question { 
+  
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.btn-counter-dec{
+background-color:#ff877f;
+}
+.btn-counter-inc{
+background-color:#5487ac;
+}
+.btn-counter-res{
+background-color:#e41a30;
+}
+.btn-question{
+  background-color: #e7cc6d ;
+}
+h2,h3{
+  color:#e7cc6d ;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+.counter,.question-datais{
+  color: #fff;
+}
+.btn-showAnswer{
+  background-color: #192146;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+}

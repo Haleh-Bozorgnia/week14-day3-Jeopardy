@@ -28,7 +28,7 @@ const handleSubmit = (event)=> {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className="btn-question"
           type="submit"
           name="randomQuestion"
           value="Get Question"
