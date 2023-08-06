@@ -27,12 +27,11 @@ const handleSubmit = (event)=> {
 }
   return (
     <div>
-      <h1>ControlledForm</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="submit"
           name="randomQuestion"
-          value="Random Question"
+          value="Get Question"
           onChange={handleChange}
         />
       </form>

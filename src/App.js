@@ -8,7 +8,8 @@ function App() {
   const [question, setQuestion] = useState();
   return (
     <div className="App">
-      <ControlledForm setQuestion={setQuestion}/>
+      <h1> Wellcome To Jeopardy</h1>
+      <ControlledForm setQuestion={setQuestion} />
       <Display question={question} />
     </div>
   );
